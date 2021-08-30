@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+[[ $EUID -ne 0 ]] && echo "This script must be run as root." && exit 1
+
+DEP1="curl"
+DEP2="apt-transport-https"
+DEP3="ca-certificates"
+DEP4="gnupg"
+DEP5="lsb-release"
+
+dpkg -s DEV1 &> /dev/null
+
+if [ $DEV1 -eq 0 ]; then
+	echo "Dependency Curl is installed"
+else
+	apt install curl
+fi
+
