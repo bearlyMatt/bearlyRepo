@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo "Hello World!"
+echo "Welcome to bearlyRepo"
+echo "REPO:      $REPO"
+echo "REPO_PATH: $REPO_PATH"
+echo "USER_CWD:  $USER_CWD"
