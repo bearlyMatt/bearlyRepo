@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+ZSH_CONFIG_FILE="~/.zshrc"
+
+echo 'notica() { curl --data "d:$*" "https://notica.us/?nFpv-M" ; }' >> ~/.bashrc && source ~/.bashrc
+
+if [[ -f $ZSH_CONFIG_FILE ]]; then
+	source ~/.zshrc
+else
+	source ~/.bashrc
+fi
+
+echo "Notica has now been installed"
