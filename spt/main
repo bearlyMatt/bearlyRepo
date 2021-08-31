@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cargo install spotify-tui
+
+echo "you now need to connect to the Spotify API. \nVisit https://github.com/Rigellute/spotify-tui#connecting-to-spotifys-api for more info"
