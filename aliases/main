@@ -3,9 +3,9 @@
 ZSH_CONFIG_FILE="~/.zshrc"
 
 if [[ -f $ZSH_CONFIG_FILE ]]; then
-	echo 'alias ls="bat"' >> ~/.zshrc && source ~/.zshrc	
+	echo 'alias cat="bat"' >> ~/.zshrc && source ~/.zshrc	
 else
-		echo 'alias ls="bat"' >> ~/.bashrc && source ~/.bashrc	
+		echo 'alias cat="bat"' >> ~/.bashrc && source ~/.bashrc	
 fi
 
 echo "Your Aliases have been applied to the shell"
