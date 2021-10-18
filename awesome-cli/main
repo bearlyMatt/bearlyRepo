@@ -1,0 +1,8 @@
+#!/bin/bash
+wget -O https://github.com/umutphp/awesome-cli/releases/download/v0.7.1/awesome-cli_0.7.1_linux_amd64.tar.gz ~/
+
+mkdir ~/awesome-cli && tar -xzvf awesome-cli_0.7.1_linux_amd64.tar.gz -C $_
+sudo mv ~/awesome-cli/awesome-cli /usr/local/bin/
+echo="Cleaning downloads"
+sudo rm ~/awesome-cli_0.7.1_linux_amd64.tar.gz
+echo="Enjoy awesome-cli!"

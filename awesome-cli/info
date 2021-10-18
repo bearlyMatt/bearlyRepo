@@ -1,0 +1,3 @@
+This package installs the Awesome-cli package by umutphp and makes it executable with the command awesome-cli
+- Feature Requests
+	- Add alias as `ac`
