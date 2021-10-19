@@ -1,0 +1,14 @@
+#!/bin/bash
+
+FILE=/usr/bin/eopkg
+FILE_UBUNTU=/usr/bin/apt
+
+if test -f "$FILE"; then
+    sudo eopkg install golang
+elif test -f "$FILE_UBUNTU"; then
+	sudo apt install golang
+fi
+
+echo "export PATH=\"~/go/bin/:$PATH\"" >> ~/.zshrc
+
+echo "Go installed"

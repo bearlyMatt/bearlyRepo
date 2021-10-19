@@ -1,0 +1,17 @@
+#!/bin/bash
+
+FILE=~/.cargo/bin/cargo
+DUST=~/.cargo/bin/dust
+
+if test -f "$FILE"; then
+	cargo install du-dust
+else
+	echo "You don't have rust installed! Install rust via rush install rust"
+fi
+
+if test -f	"$DUST"; then
+	echo "alias du=\"dust\"" >> ~/.zshrc
+	refreshenv
+else
+	echo "Something has gone wrong! Manually add your Dust alias to .zshrc"
+fi

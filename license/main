@@ -1,0 +1,10 @@
+#!/bin/bash
+FILE=/usr/bin/go
+
+if test -f "$FILE"; then
+    go install github.com/nishanths/license/v5@latest
+else 
+	echo "You've forgotten to install go! Run \"rush go\" to proceed"
+fi
+
+echo "license installed"

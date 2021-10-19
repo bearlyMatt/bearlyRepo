@@ -1,7 +1,39 @@
 #!/bin/bash
 
-npm install --global yarn
+sudo npm install --global yarn
 
-export PATH="$PATH:$(yarn global bin)"
+read -p "what is your os: " OS
+read -p "what is your username: " UNAME
 
-echo="Yarn installed and bin folder added to path"
+UBUNTU="ubuntu"
+SOLUS="solus"
+DEBIAN="debian"
+ACCOUNT="$(whoami)"
+ERROR="Looks like we have an error! Try manually adding the yarn bin dir \n to path via export PATH=\"$PATH:$(yarn global bin)\""
+
+if [[ "$OS" == "$UBUNTU" ]] && [[ "$UNAME" == "$ACCOUNT" ]]; then
+	echo="You're on ubuntu $(whoami); exporting yarn bin to PATH"
+
+	export PATH="$PATH:$(yarn global bin)"
+	
+	echo="Yarn installed and bin folder added to path"
+	
+elif [[ "$OS" == "$SOLUS" ]] && [[ "$UNAME" == "$ACCOUNT" ]]; then
+	echo="You're on solus, $(whoami); exporting yarn bin to PATH"
+
+	export PATH="$PATH:$(yarn global bin)"
+	
+	echo="Yarn installed and bin folder added to path"
+
+elif [[ "$OS" == "$debian" ]] && [[ "$UNAME" == "$ACCOUNT" ]]; then
+	echo="You're on debian, or a derivative, $(whoami); exporting yarn bin to PATH"
+
+	export PATH="$PATH:$(yarn global bin)"
+	
+	echo="Yarn installed and bin folder added to path"
+	
+elif [[ "$OS" != "$debian" ]] || [[ "$OS" != "$SOLUS" ]] || [[ "$OS" != "$UBUNTU" ]] || [[ "$UNAME" != "$ACCOUNT" ]]; then
+	printf="$ERROR"
+fi
+
+yarn --version

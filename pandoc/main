@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FILE=/usr/bin/eopkg
+FILE_UBUNTU=/usr/bin/apt
+
+if test -f "$FILE"; then
+    sudo eopkg install pandoc
+elif test -f "$FILE_UBUNTU"; then
+	sudo apt install pandoc
+fi
+
+echo "Pandoc installed"
