@@ -1,0 +1,28 @@
+#!/bin/bash
+read -p "Name your Distro: " DISTRO
+read -p "Name your Shell (no capitals): " SHELL
+
+sleep 1
+SOLUS="solus"
+UBUNTU="ubuntu"
+DEBIAN="debian"
+BASH_PROMPT="bash"
+ZSH_PROMPT="zsh"
+ZSH=~/.zshrc
+BASH=~/.bashrc
+
+if [[ "$DISTRO" == "$SOLUS" ]] && [[ "$SHELL" == "$ZSH_PROMPT" ]]; then
+	echo 'OS="solus"' >> ~/.zshrc
+	export OS
+elif [[ "$DISTRO" == "$UBUNTU" || "$DEBIAN" ]] && [[ "$SHELL" == "$ZSH_PROMPT" ]]; then
+	echo 'OS="Ubuntu/Debian"' >> ~/.zshrc
+	export OS
+elif [[ "$DISTRO" == "$SOLUS" ]] && [[ "$SHELL" == "$BASH_PROMPT" ]]; then
+	echo 'OS="solus"' >> ~/.bashrc
+	export OS
+elif [[ "$DISTRO" == "$UBUNTU" || "$DEBIAN" ]] && [[ "$SHELL" == "$BASH_PROMPT" ]]; then
+	echo 'OS="debian"' >> ~/.bashrc
+	export OS
+fi
+
+echo "global variable OS initialised"

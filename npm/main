@@ -1,0 +1,11 @@
+#!/bin/sh
+sudo apt | read message >> osType.tmp
+VAR2=$(cat osType.tmp)
+
+if [["$VAR2" == "bash: apt: command not found"]]; then
+	echo "You're on Solus!" && sudo eopkg install nodejs -y
+else
+	echo "You're on Debian/Ubuntu!" && sudo apt install nodejs -y
+fi
+
+npm -v

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+npm install --global yarn
+
+export PATH="$PATH:$(yarn global bin)"
+
+echo="Yarn installed and bin folder added to path"

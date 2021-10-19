@@ -1,0 +1,17 @@
+Installs the birthday [IonicaBizau] yarn package. 
+
+Usage: birthday [options]
+
+Options:
+  -n, --name <name>           The person name.
+  -d, --date <date>           The person birthday or born date.
+  -c, --coming <date>         Comming birthdays. Pass a date in the future.
+  -b, --birthday-path <path>  Use a different birthday json file path.
+  -h, --help                  Displays this help.
+  -v, --version               Displays version information.
+
+Examples:
+  birthday -n 'Ionică Bizău' -d '14/09/1995'
+  birthday -n 'Ionică Bizău' -d '14/09'
+  birthday -c '2015-10-10'
+  birthday # displays all birthdays
