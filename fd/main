@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+RUST=~/.cargo/bin/cargo
+
+if test -f "$RUST"; then
+	cargo install fd-find
+	echo "fd is now installed, adding alias to .zshrc"
+	echo "alias find=\"fd\"" >> ~/.zshrc
+else
+	echo "Unable to locate cargo, are you sure it's installed?"
+fi

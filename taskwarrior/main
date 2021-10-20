@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+mkdir -p ~/.taskwarrior 
+
+cd ~/.taskwarrior
+
+wget https://taskwarrior.org/download/task-2.5.3.tar.gz
+
+tar xzvf task-2.5.3.tar.gz
+
+cp -a task-2.5.3/. .
+
+rm -R task-2.5.3
+
+cmake -DCMAKE_BUILD_TYPE=release .
+
+make
+
+sudo make install
+
+printf="You have now built taskwarrior"

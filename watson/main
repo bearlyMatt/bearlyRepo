@@ -1,0 +1,9 @@
+#!/bin/bash
+FILE=/usr/bin/pip3
+
+if test -f "$FILE"; then
+	pip3 install td-watson
+	echo="count your time; watson is now installed"
+else
+	echo="Something tells me you don't have pip installed, try again later"
+fi

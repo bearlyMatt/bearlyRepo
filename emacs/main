@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+
+EMACS_HOME="~/.emacs.d/"
+
+sudo apt update && sudo apt install emacs -y
+
+echo="emacs installed"
+
+wget -O https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt $EMACS_HOME/UnicodeData.txt
+
+echo="(when (file-exists-p "~/.emacs.d/UnicodeData.txt")
+  (setq describe-char-unicodedata-file "~/.emacs.d/UnicodeData.txt"))" >> $EMACS_HOME/init.el
+
